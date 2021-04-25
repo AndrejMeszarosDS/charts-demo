@@ -1,0 +1,200 @@
+$pagebbgcolor: black;
+$appbgcolor: rgb(211, 166, 166);
+$headerbgcolor: teal;
+$bodybgcolor: rgb(255, 255, 255);
+$footerbgcolor: teal;
+$footercolor: white;
+$charttypebuttonbgcolor: rgba(0, 128, 128, 0.5);
+$charttypebuttoncolor: white;
+$refreshbuttonbgcolor: rgba(29, 105, 105, 0.705);
+$refreshbuttoncolor: white;
+/* ------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------ */
+
+.Page {
+  width: 100%;
+  height: 100%;
+  background-color: $pagebbgcolor;
+}
+
+.Button {
+  border: none;
+  padding: 12px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  outline: none;
+  border-radius: 4px;
+}
+
+.App {
+  height: 100%;
+  max-width: 1140px;
+  background-color: $appbgcolor;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  .Header {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 36px;
+    background-color: $headerbgcolor;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .Left {
+      align-self: center;
+      margin-top: 4px;
+      margin-left: 15px;
+      margin-right: 15px;
+      .material-icons {
+        color: white;
+        font-size: 24px;
+      }
+    }
+    .Center {
+      align-self: center;
+      margin-left: 15px;
+      margin-right: 15px;
+      .Title {
+        font-size: 20px;
+        color: white;
+      }
+    }
+    .Right {
+      align-self: center;
+      margin-top: 4px;
+      margin-left: 15px;
+      margin-right: 15px;
+      .material-icons {
+        color: white;
+        font-size: 24px;
+      }
+    }
+    .Title {
+      color: white;
+      justify-self: center;
+    }
+  }
+  .Body {
+    width: 100%;
+    flex-grow: 1;
+    background-color: $bodybgcolor;
+    display: flex;
+    flex-direction: column;
+    .Chart {
+      flex-grow: 1;
+      margin: 8px;
+    }
+    .ButtonsGroup {
+      margin-left: 4px;
+      margin-right: 4px;
+      margin-bottom: 4px;
+      display: flex;
+      flex-direction: column;
+      .ChartTypeButtons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .Item {
+          width: 33.33%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .Button {
+          background-color: $charttypebuttonbgcolor;
+          color: $charttypebuttoncolor;
+          width: calc(100% - 8px);
+        }
+      }
+      .RefreshButton {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .Item {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .Button {
+          background-color: $refreshbuttonbgcolor;
+          color: $refreshbuttoncolor;
+          width: calc(100% - 8px);
+        }
+      }
+    }
+  }
+  .Footer {
+    width: 100%;
+    height: 36px;
+    background-color: $footerbgcolor;
+    color: $footercolor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
+
+canvas {
+  background-color: rgba(255, 255, 255, 1);
+}
+/* ------------------------------------------------------------------------------------------ */
+
+@media only screen and (max-device-width: 768px) and (orientation: landscape) {
+  .Body {
+    flex-direction: row !important;
+  }
+  .ButtonsGroup {
+    width: 40%;
+    margin-top: 4px;
+    justify-content: space-between;
+  }
+  .ChartTypeButtons {
+    .Item {
+      width: 50% !important;
+    }
+  }
+}
+/* ------------------------------------------------------------------------------------------ */
+
+@media only screen and (min-device-width: 769px) {
+  .App {
+    .Header {
+      height: 56px;
+      .Left {
+        .material-icons {
+          font-size: 44px;
+        }
+      }
+      .Center {
+        .Title {
+          font-size: 30px;
+        }
+      }
+      .Right {
+        .material-icons {
+          font-size: 44px;
+        }
+      }
+    }
+  }
+  .Button {
+    padding: 16px 32px;
+    font-size: 16px;
+  }
+  .Footer {
+    height: 56px !important;
+  }
+  .Chart {
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+  }
+}
